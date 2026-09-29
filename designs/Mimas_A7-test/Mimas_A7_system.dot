@@ -1,0 +1,61 @@
+digraph Mimas_A7_System {
+
+    rankdir=TB;
+    bgcolor="white";
+
+    node [
+        shape=box,
+        style="rounded,filled",
+        fontname="Arial",
+        fontsize=14,
+        margin="0.25,0.15"
+    ];
+
+    edge [
+        fontname="Arial",
+        fontsize=11,
+        arrowsize=0.8
+    ];
+
+    clk [
+        label="100 MHz Clock",
+        fillcolor="lightblue"
+    ];
+
+    ibuf [
+        label="Input Buffer\n(IBUF)",
+        fillcolor="lightgray"
+    ];
+
+    bufg [
+        label="Global Clock Buffer\n(BUFG)",
+        fillcolor="lightgray"
+    ];
+
+    counter [
+        label="27-bit Counter\n\n27 FDRE + 7 CARRY4 + LUTs",
+        fillcolor="lightyellow"
+    ];
+
+    bit26 [
+        label="Counter[26]",
+        fillcolor="lightgreen"
+    ];
+
+    obuf [
+        label="Output Buffer\n(OBUF)",
+        fillcolor="lightgray"
+    ];
+
+    led [
+        label="LED7\nMimas A7",
+        fillcolor="lightcoral"
+    ];
+
+    clk -> ibuf;
+    ibuf -> bufg;
+    bufg -> counter;
+    counter -> bit26;
+    bit26 -> obuf;
+    obuf -> led;
+}

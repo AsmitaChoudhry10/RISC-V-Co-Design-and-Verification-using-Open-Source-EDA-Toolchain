@@ -1,0 +1,12 @@
+**/*.blif
+**/*.json
+**/*.bin
+**/*.asc
+
+# Build directory
+build/
+
+# Simulation directory
+sim/
+
+!designs/Mimas_A7-test/Mimas_A7.json
